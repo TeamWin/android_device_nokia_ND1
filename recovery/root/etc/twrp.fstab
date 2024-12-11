@@ -39,21 +39,13 @@
 
 # Bootloader					
 /aboot					emmc	/dev/block/bootdevice/by-name/aboot										flags=backup=1;display="Bootloader"
-/abootbak				emmc	/dev/block/bootdevice/by-name/abootbak									flags=backup=1;subpartitionof=/aboot
 /cmnlib					emmc	/dev/block/bootdevice/by-name/cmnlib									flags=backup=1;subpartitionof=/aboot
 /cmnlib64				emmc	/dev/block/bootdevice/by-name/cmnlib64									flags=backup=1;subpartitionof=/aboot
-/cmnlib64bak			emmc	/dev/block/bootdevice/by-name/cmnlib64bak								flags=backup=1;subpartitionof=/aboot
-/cmnlibbak				emmc	/dev/block/bootdevice/by-name/cmnlibbak									flags=backup=1;subpartitionof=/aboot
 /devcfg					emmc	/dev/block/bootdevice/by-name/devcfg									flags=backup=1;subpartitionof=/aboot
-/devcfgbak				emmc	/dev/block/bootdevice/by-name/devcfgbak									flags=backup=1;subpartitionof=/aboot
 /keymaster				emmc	/dev/block/bootdevice/by-name/keymaster									flags=backup=1;subpartitionof=/aboot
-/keymasterbak			emmc	/dev/block/bootdevice/by-name/keymasterbak								flags=backup=1;subpartitionof=/aboot
 /rpm					emmc	/dev/block/bootdevice/by-name/rpm										flags=backup=1;subpartitionof=/aboot
-/rpmbak					emmc	/dev/block/bootdevice/by-name/rpmbak									flags=backup=1;subpartitionof=/aboot
 /sbl1					emmc	/dev/block/bootdevice/by-name/sbl1										flags=backup=1;subpartitionof=/aboot
-/sbl1bak				emmc	/dev/block/bootdevice/by-name/sbl1bak									flags=backup=1;subpartitionof=/aboot
 /tz						emmc	/dev/block/bootdevice/by-name/tz										flags=backup=1;subpartitionof=/aboot
-/tzbak					emmc	/dev/block/bootdevice/by-name/tzbak										flags=backup=1;subpartitionof=/aboot
 
 # EFS partitions				
 /modemst1				emmc	/dev/block/bootdevice/by-name/modemst1									flags=backup=1;display="EFS"
