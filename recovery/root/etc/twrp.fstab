@@ -24,36 +24,64 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# mount point       fstype    device					               device2			        flags
+# mount point			fstype	device										device2						fsflags
+
 
 # System partitions
-/system             ext4      /dev/block/bootdevice/by-name/system                              flags=backup=1;display="System"
-/system_image       emmc      /dev/block/bootdevice/by-name/system                              flags=backup=1;display="System Image"
-/cache              ext4      /dev/block/bootdevice/by-name/cache                               flags=backup=1;display="Cache"
-/boot               emmc      /dev/block/bootdevice/by-name/boot                                flags=backup=1;display="Bootloader"
-/recovery           emmc      /dev/block/bootdevice/by-name/recovery                            flags=backup=1;display="Recovery"
-/data               ext4      /dev/block/bootdevice/by-name/userdata                            flags=encryptable=footer;length=-16384;display="Internal Storage"
+/system					ext4	/dev/block/bootdevice/by-name/system									flags=backup=1;display="System"
+/system_image			emmc	/dev/block/bootdevice/by-name/system									flags=backup=1;display="System Image"
+/data					ext4	/dev/block/bootdevice/by-name/userdata									flags=encryptable=footer;length=-16384;display="Internal Storage"
+/cache					ext4	/dev/block/bootdevice/by-name/cache										flags=backup=1;display="Cache"
+/boot					emmc	/dev/block/bootdevice/by-name/boot										flags=backup=1;display="Bootloader"
+/recovery				emmc	/dev/block/bootdevice/by-name/recovery									flags=backup=1;display="Recovery"
+/misc					emmc	/dev/block/bootdevice/by-name/misc										flags=backup=1;display="Misc"
+/persist				ext4	/dev/block/bootdevice/by-name/persist									flags=backup=1;display="Persist"
 
-# Modem and related partitions
-/misc               emmc      /dev/block/bootdevice/by-name/misc                                flags=backup=1;display="Misc"
-/modem              ext4      /dev/block/bootdevice/by-name/modem                               flags=backup=1;display="Modem"
-/bluetooth          emmc      /dev/block/bootdevice/by-name/bluetooth                           flags=backup=1;display="Bluetooth"
-/dsp                ext4      /dev/block/bootdevice/by-name/dsp                                 flags=backup=1;display="DSP"
- 
-# EFS (Embedded File System) partitions
-/efs1               emmc      /dev/block/bootdevice/by-name/modemst1                            flags=backup=1;display="EFS1"
-/efs2               emmc      /dev/block/bootdevice/by-name/modemst2                            flags=backup=1;display="EFS2"
-/efsc               emmc      /dev/block/bootdevice/by-name/fsc                                 flags=backup=1;display="EFSC"
-/efsg               emmc      /dev/block/bootdevice/by-name/fsg                                 flags=backup=1;display="EFSG"
+# Bootloader					
+/aboot					emmc	/dev/block/bootdevice/by-name/aboot										flags=backup=1;display="Bootloader"
+/abootbak				emmc	/dev/block/bootdevice/by-name/abootbak									flags=backup=1;subpartitionof=/aboot
+/cmnlib					emmc	/dev/block/bootdevice/by-name/cmnlib									flags=backup=1;subpartitionof=/aboot
+/cmnlib64				emmc	/dev/block/bootdevice/by-name/cmnlib64									flags=backup=1;subpartitionof=/aboot
+/cmnlib64bak			emmc	/dev/block/bootdevice/by-name/cmnlib64bak								flags=backup=1;subpartitionof=/aboot
+/cmnlibbak				emmc	/dev/block/bootdevice/by-name/cmnlibbak									flags=backup=1;subpartitionof=/aboot
+/devcfg					emmc	/dev/block/bootdevice/by-name/devcfg									flags=backup=1;subpartitionof=/aboot
+/devcfgbak				emmc	/dev/block/bootdevice/by-name/devcfgbak									flags=backup=1;subpartitionof=/aboot
+/keymaster				emmc	/dev/block/bootdevice/by-name/keymaster									flags=backup=1;subpartitionof=/aboot
+/keymasterbak			emmc	/dev/block/bootdevice/by-name/keymasterbak								flags=backup=1;subpartitionof=/aboot
+/rpm					emmc	/dev/block/bootdevice/by-name/rpm										flags=backup=1;subpartitionof=/aboot
+/rpmbak					emmc	/dev/block/bootdevice/by-name/rpmbak									flags=backup=1;subpartitionof=/aboot
+/sbl1					emmc	/dev/block/bootdevice/by-name/sbl1										flags=backup=1;subpartitionof=/aboot
+/sbl1bak				emmc	/dev/block/bootdevice/by-name/sbl1bak									flags=backup=1;subpartitionof=/aboot
+/tz						emmc	/dev/block/bootdevice/by-name/tz										flags=backup=1;subpartitionof=/aboot
+/tzbak					emmc	/dev/block/bootdevice/by-name/tzbak										flags=backup=1;subpartitionof=/aboot
 
-# FIH partitions
-/box                ext4      /dev/block/bootdevice/by-name/box                                 flags=backup=1;display="Box"
-/hidden             ext4      /dev/block/bootdevice/by-name/hidden                              flags=backup=1;display="Hidden"
-/cda                ext4      /dev/block/bootdevice/by-name/cda                                 flags=backup=1;display="CDA"
-/securefs           ext4      /dev/block/bootdevice/by-name/securefs                            flags=backup=1;display="SecureFS"
-/elabel             emmc      /dev/block/bootdevice/by-name/elabel                              flags=backup=1;display="ELabel"
-/persist            ext4      /dev/block/bootdevice/by-name/persist                             flags=backup=1;display="Persist"
+# EFS partitions				
+/modemst1				emmc	/dev/block/bootdevice/by-name/modemst1									flags=backup=1;display="EFS"
+/modemst2				emmc	/dev/block/bootdevice/by-name/modemst2									flags=backup=1;subpartitionof=/modemst1
+/cust_nv				emmc	/dev/block/bootdevice/by-name/cust_nv									flags=backup=1;subpartitionof=/modemst1
+/default_nv				emmc	/dev/block/bootdevice/by-name/default_nv								flags=backup=1;subpartitionof=/modemst1
+/fsc					emmc	/dev/block/bootdevice/by-name/fsc										flags=backup=1;subpartitionof=/modemst1
+/fsg					emmc	/dev/block/bootdevice/by-name/fsg										flags=backup=1;subpartitionof=/modemst1
+/rf_nv					emmc	/dev/block/bootdevice/by-name/rf_nv										flags=backup=1;subpartitionof=/modemst1
+
+# Firmware partitions
+/modem					emmc	/dev/block/bootdevice/by-name/modem										flags=backup=1;display="Firmware"
+/dsp					emmc	/dev/block/bootdevice/by-name/dsp										flags=backup=1;subpartitionof=/modem
+
+# OEM/Manufacturer Partitions				
+/oem					emmc	/dev/block/bootdevice/by-name/oem										flags=backup=1;display="OEM"
+/box					emmc	/dev/block/bootdevice/by-name/box										flags=backup=1;subpartitionof=/oem
+/cda					emmc	/dev/block/bootdevice/by-name/cda										flags=backup=1;subpartitionof=/oem
+/ftmboot				emmc	/dev/block/bootdevice/by-name/ftmboot									flags=backup=1;subpartitionof=/oem
+/ftmlog					emmc	/dev/block/bootdevice/by-name/ftmlog									flags=backup=1;subpartitionof=/oem
+/hidden					emmc	/dev/block/bootdevice/by-name/hidden									flags=backup=1;subpartitionof=/oem
+/hwcfg					emmc	/dev/block/bootdevice/by-name/hwcfg										flags=backup=1;subpartitionof=/oem
+/multi_splash			emmc	/dev/block/bootdevice/by-name/multi_splash								flags=backup=1;subpartitionof=/oem
+/sec					emmc	/dev/block/bootdevice/by-name/sec										flags=backup=1;subpartitionof=/oem
+/splash					emmc	/dev/block/bootdevice/by-name/splash									flags=backup=1;subpartitionof=/oem
+/sutinfo				emmc	/dev/block/bootdevice/by-name/sutinfo									flags=backup=1;subpartitionof=/oem
+/securefs				emmc	/dev/block/bootdevice/by-name/securefs									flags=backup=1;subpartitionof=/oem
 
 # External storage partitions
-/external_sd        vfat      /dev/block/mmcblk1p1                     /dev/block/mmcblk1       flags=display="External SD";storage;wipeingui;removable
-/usbstorage         vfat      /dev/block/sda1                          /dev/block/sda           flags=fsflags=utf8;display="USB Storage";storage;removable
+/storage/external_sd	vfat	/dev/block/mmcblk1p1						/dev/block/mmcblk1			flags=display="External SD";storage;wipeingui;removable
+/storage/usb_storage	vfat	/dev/block/sda1								/dev/block/sda				flags=fsflags=utf8;display="USB Storage";storage;removable
