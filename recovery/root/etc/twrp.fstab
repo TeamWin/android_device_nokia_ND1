@@ -73,6 +73,28 @@
 /splash					emmc	/dev/block/bootdevice/by-name/splash									flags=backup=1;subpartitionof=/oem
 /sutinfo				emmc	/dev/block/bootdevice/by-name/sutinfo									flags=backup=1;subpartitionof=/oem
 /securefs				emmc	/dev/block/bootdevice/by-name/securefs									flags=backup=1;subpartitionof=/oem
+/systeminfo				emmc	/dev/block/bootdevice/by-name/systeminfo								flags=backup=1;subpartitionof=/oem
+
+# Miscelaneous partitions
+/apdp					emmc	/dev/block/bootdevice/by-name/apdp										flags=backup=1;display="Miscelaneous"
+/config					emmc	/dev/block/bootdevice/by-name/config									flags=backup=1;subpartitionof=/apdp
+/DDR					emmc	/dev/block/bootdevice/by-name/DDR										flags=backup=1;subpartitionof=/apdp
+/deviceinfo				emmc	/dev/block/bootdevice/by-name/deviceinfo								flags=backup=1;subpartitionof=/apdp
+/devinfo				emmc	/dev/block/bootdevice/by-name/devinfo									flags=backup=1;subpartitionof=/apdp
+/dip					emmc	/dev/block/bootdevice/by-name/dip										flags=backup=1;subpartitionof=/apdp
+/dpo					emmc	/dev/block/bootdevice/by-name/dpo										flags=backup=1;subpartitionof=/apdp
+/keystore				emmc	/dev/block/bootdevice/by-name/keystore									flags=backup=1;subpartitionof=/apdp
+/limits					emmc	/dev/block/bootdevice/by-name/limits									flags=backup=1;subpartitionof=/apdp
+/logdump				emmc	/dev/block/bootdevice/by-name/logdump									flags=backup=1;subpartitionof=/apdp
+/mcfg					emmc	/dev/block/bootdevice/by-name/mcfg										flags=backup=1;subpartitionof=/apdp
+/mdtp					emmc	/dev/block/bootdevice/by-name/mdtp										flags=backup=1;subpartitionof=/apdp
+/mota					emmc	/dev/block/bootdevice/by-name/mota										flags=backup=1;subpartitionof=/apdp
+/msadp					emmc	/dev/block/bootdevice/by-name/msadp										flags=backup=1;subpartitionof=/apdp
+/reserved				emmc	/dev/block/bootdevice/by-name/reserved									flags=backup=1;subpartitionof=/apdp
+/reserved_bak			emmc	/dev/block/bootdevice/by-name/reserved_bak								flags=backup=1;subpartitionof=/apdp
+/securefs				emmc	/dev/block/bootdevice/by-name/securefs									flags=backup=1;subpartitionof=/apdp
+/ssd					emmc	/dev/block/bootdevice/by-name/ssd										flags=backup=1;subpartitionof=/apdp
+/syscfg					emmc	/dev/block/bootdevice/by-name/syscfg									flags=backup=1;subpartitionof=/apdp
 
 # External storage partitions
 /storage/external_sd	vfat	/dev/block/mmcblk1p1						/dev/block/mmcblk1			flags=display="External SD";storage;wipeingui;removable
