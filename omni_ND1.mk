@@ -36,4 +36,5 @@ PRODUCT_PACKAGES += \
 
 # Encryption
 PRODUCT_PACKAGES += \
-	libcryptfs_hw
+    qcom_decrypt \
+    qcom_decrypt_fbe

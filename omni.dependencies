@@ -1,14 +1,26 @@
 [
   {
-    "remote": "omnirom",
-    "repository": "android_vendor_qcom_opensource_commonsys",
-    "target_path": "vendor/qcom/opensource/commonsys",
-    "revision": "android-9.0"
+    "remote":      "andrewgigena",
+    "repository":  "android_kernel_nokia_ND1",
+    "target_path": "kernel/nokia/ND1",
+    "revision":    "twrp"
   },
   {
-    "remote": "andrewgigena",
-    "repository": "android_kernel_nokia_ND1",
-    "target_path": "kernel/nokia/ND1",
-    "revision": "twrp"
+    "remote":      "TeamWin",
+    "repository":  "android_device_qcom_common",
+    "target_path": "device/qcom/common",
+    "revision":    "android-9.0"
+  },
+  {
+    "remote":      "TeamWin",
+    "repository":  "android_hardware_qcom_bootctrl",
+    "target_path": "hardware/qcom/bootctrl",
+    "revision":    "android-9.0"
+  },
+  {
+    "remote":      "TeamWin",
+    "repository":  "android_device_qcom_twrp-common",
+    "target_path": "device/qcom/twrp-common",
+    "revision":    "android-9.0"
   }
 ]
