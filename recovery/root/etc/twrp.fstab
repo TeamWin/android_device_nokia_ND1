@@ -97,5 +97,5 @@
 /syscfg					emmc	/dev/block/bootdevice/by-name/syscfg									flags=backup=1;subpartitionof=/apdp
 
 # External storage partitions
-/storage/external_sd	vfat	/dev/block/mmcblk1p1						/dev/block/mmcblk1			flags=display="External SD";storage;wipeingui;removable
-/storage/usb_storage	vfat	/dev/block/sda1								/dev/block/sda				flags=fsflags=utf8;display="USB Storage";storage;removable
+/external_sd            vfat	/dev/block/mmcblk1p1						/dev/block/mmcblk1			flags=display="External SD";storage;wipeingui;removable
+/usb_storage            vfat	/dev/block/sda1								/dev/block/sda				flags=fsflags=utf8;display="USB Storage";storage;removable
